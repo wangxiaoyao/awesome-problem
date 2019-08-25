@@ -12,19 +12,19 @@
 
 int main(int argc, const char * argv[]) {
     int a ,b;
-
+    
     srand((unsigned) time(NULL));//用系统当前时间设置rand()随机序列种子，保证每次运行随机序列不一样
     b = rand()%100+1;
-//    printf("%d",b);
-    scanf("%d",&a);
-    while (a!=b) {
+    printf("%d",b);
+    while (1) {
+        scanf("%d",&a);
         if (a>b) {
             printf("输入数字过大\n");
-            scanf("%d",&a);
         }else if(a<b){
             printf("输入数字过小\n");
-            scanf("%d",&a);
+        }else{
+            printf("恭喜\n");
+            break;
         }
     }
-    printf("恭喜\n");
 }
