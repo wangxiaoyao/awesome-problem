@@ -12,10 +12,6 @@
 void cmpXiao(char *str1,char *str2){
     unsigned long len1 = strlen(str1);
     unsigned long len2 = strlen(str2);
-    if (str1[3]==str2[3]) {
-        printf("！相等");
-        printf("证明对于字符串末端存在二进制0，且在循环中也有占位，所以index为4的原因");
-    }
     if (len1!=len2) {
         printf("这两个字符串不相等\n");
     }else{
