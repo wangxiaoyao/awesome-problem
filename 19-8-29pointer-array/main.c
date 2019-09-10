@@ -13,15 +13,15 @@
 char *sortXiao(char *str[],int num){
     char temp[100];
     int index = 0;
+//    printf("%s\n",str[1]);
+//    printf("%s\n",*(str+1));
     for (int i=0; i<num; i++) {
         for (int j=0; j< strlen(*(str+i)); j++) {
-//            strcat(temp,*(str[i]+j));
             temp[index] = *(str[i]+j);
             index++;
         }
     };
     char *p = temp;
-//    printf("%s\n",p9);
     unsigned long len = strlen(temp);
     for (int i =0; i<len; i++) {
         for (int j=i+1;j<len;j++ ) {
