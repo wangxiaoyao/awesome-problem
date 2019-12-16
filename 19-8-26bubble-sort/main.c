@@ -11,6 +11,10 @@
 #include <time.h>
 
 int main(int argc, const char * argv[]) {
+    clock_t start,finish;
+    double duration;
+    printf("开始\n");
+    start = clock();
     int arrayOri[5]={1,43,34,6,33};
     int temp;
     
@@ -24,7 +28,10 @@ int main(int argc, const char * argv[]) {
         }
     }
     for (int i =0; i<5; i++) {
-        printf("冒泡结束后：%d\n",arrayOri[i]);
+        printf("%d\n",arrayOri[i]);
     }
+    finish = clock();
+    duration = (double)(finish-start) / CLOCKS_PER_SEC;
+    printf("用时：%f\n",duration);
 }
 
