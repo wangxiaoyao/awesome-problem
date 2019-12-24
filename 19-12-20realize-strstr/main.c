@@ -14,7 +14,7 @@ char * strstr1(const char *des, const char *str){
         if (*desp==*strp) {
             const char *p = desp;
             while (index<strpLen) {
-                if (*desp!=*strp) {
+                if (*desp!=*st rp) {
                     break;
                 }
                 desp++;
