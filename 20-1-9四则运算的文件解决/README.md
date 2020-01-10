@@ -15,3 +15,5 @@ sscanf 和 sprintf  : 目标为字符串， 一个分解， 一个整合
 
 fscanf 和 fprintf： 目标为文件。 
 ```
+
+- 3 main 为最简单的方式解决
