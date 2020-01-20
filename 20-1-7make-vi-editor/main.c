@@ -8,7 +8,7 @@
 int main(void){
 
     // 1 创建文件名，路径
-    printf("请输入文件名");
+    printf("请输入文件名\n");
     char fileName[256];
     scanf("%s\n",fileName);
     // 接受换行
@@ -31,13 +31,10 @@ int main(void){
         }
         
         // 4 将字符串写入文件中
-        int i = 0;
-        while (buf[i]) {
-            fputc(buf[i++],fp);
-        }
+        fputs(buf,fp);
         
-        // 5 更新缓冲区， 防止关闭文件
-//        fpplus(fp);
+        // 5 更新缓冲区: 效果为：即是显示在文件中
+        fflush(fp);
     }
     
     fclose(fp);
