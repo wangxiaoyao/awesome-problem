@@ -51,7 +51,7 @@ void loadFile_ConfigFile(const char *filePath, char ***fileData, int *lines){
             memset(buf, 0, 1024);
         }
     }
-    fclose(file);
+    fclose(file);   
     *lines = line;
     *fileData = temp;
     free(temp);
