@@ -23,11 +23,13 @@ window：VS2019
 
 2 使用终端进行编译：
 
-- 1 本电脑需先安装 GCC编译器
+- 1 本电脑需先安装 GCC套件
 
 ```
-# mac可以在终端输入以下命令进行安装GCC
-brew install gcc
+# MAC系统只要安装了 Xcode就有了 clang。
+
+# linux可以在终端输入以下命令进行安装GCC
+sudo apt-get  install  build-essential
 ```
 
 - 2 利用GCC进行编译
@@ -35,7 +37,7 @@ brew install gcc
 对clone的 XXX.c 文件进行如下操作：
 
 ```
-gcc XXX.c -o "可执行程序名称"
+gcc XXX.cpp -o "可执行程序名称"
 ```
 
 点击生成的可执行程序，即可运行。
