@@ -2,15 +2,29 @@
 // 一：创建http服务器
 let http = require('node:http');
 
-const ports = 50000;
+const port = 50000;
 
-let server = http.createServer({
+const options = {
     // keepAlive: true,
     // requestTimeout: 400000,
-}, (req, res) => {
-    console.log(req);
+};
+
+let server = http.createServer(options, (req, res) => {
+    console.log(req.method, req.url);
+
+    // 允许跨域
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    // 处理预检请求
+    if (req.method === 'OPTIONS') {
+        res.writeHead(204);
+        res.end();
+        return;
+    }
+
     if (req.method == 'GET' && req.url == '/') {
-        console.log('res',res);
         res.end('hello world')
     }
     if (req.method == 'GET' && req.url == '/home') {
@@ -19,17 +33,6 @@ let server = http.createServer({
 })
 
 
-server.listen(ports, () => {
-    console.log('端口7000，被请求');
+server.listen(port, () => {
+    console.log('端口50000正在被监听');
 })
-
-
-
-
-
-
-// 二：创建http请求
-
-
-
-// 

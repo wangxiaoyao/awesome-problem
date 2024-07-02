@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR Request Example</title>
+</head>
+
+<body>
+    <h1>利用浏览器实现http请求。XHR，fetch</h1>
+
+    <script>
+        // 方案1：使用xhrHttpRequest： 注意：必须完整URl，不能写成：127.0.0.1:50000
+        
+        // let xhr = new XMLHttpRequest();
+        // xhr.open('GET', 'http://127.0.0.1:50000/', true)
+
+        // 回调函数：监控每一步 0-4
+        // xhr.onreadystatechange = function () {
+        //     if (xhr.readyState === 4) {
+        //         if (xhr.status === 200) {
+        //             console.log(xhr.response);
+        //             alert(xhr.response);
+        //         } else {
+        //             console.error('Request failed with status', xhr.status);
+        //         }
+        //     }
+        // };
+        // 回调函数：等于onreadystatechange的阶段4
+        // xhr.onload = () => {
+        //     if (xhr.status === 200) {
+        //         alert(xhr.response)
+        //     } else {
+        //         console.log('error', xhr.onerror);
+        //     }
+        // }
+        // xhr.send();
+    </script>
+    <script>
+        // 方案2:fetch: 处理response返回体body的ReadableStream。 二进制数据流的处理
+        // 提供的API：response.text()，response.json()，response.blob()，response.formData() 返回Promise
+        fetch('http://127.0.0.1:50000/',{
+            method:'GET',
+            headers:{
+            },
+            // body: JSON.stringify(data)
+        }).then(response => {
+            console.log(response);
+            return response.text();
+        }).then(data => {
+            console.log(data);
+        }).catch(error => {
+            console.error('Error',error)
+        })
+    </script>
+</body>
+
+</html>
