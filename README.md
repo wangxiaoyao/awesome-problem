@@ -36,15 +36,30 @@ gcc XXX.c -o "可执行程序名称"
 C：
 
 - mac：Xcode
-- window：VS2019
 - 编译器：gcc
 
 Cpp：
 
 - mac： Xcode
-- window：VS2019
 - 编译器：clang/llvm
 
-WEB：html，css，javascript 三大模块问题。以及demo实例。
+WEB：常见web开发问题。
 
-- vscode
+- 编译器：vscode
+
+## leetcode
+
+“从今天起，我将开始刷leetcode试题。”
+
+2020-2-5开启的项目，悄然间，四年而过。24-6-23将接过这一棒。
+
+---
+
+本项目：以英文名作为试题名，试题的序列号和[leetcode官网](https://leetcode.com/)对应。
+
+每个试题一个文件夹，包含：
+
+- README文件，该文件为：分析题意以及多种算法的解题思路。
+- 不同语言的解题文件。
+
+运行方式：复制解题文件中的某一方法(对应语言)，到 leedcode官网对应题号下运行。
