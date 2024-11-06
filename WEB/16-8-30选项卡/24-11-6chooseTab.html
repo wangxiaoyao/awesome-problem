@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChooseTab</title>
+    <style>
+        ul {
+            display: flex;
+        }
+
+        ul>li {
+            list-style: none;
+            font-size: larger;
+            padding: 12px;
+            margin: 4px;
+            border: 2px solid goldenrod;
+            cursor: pointer;
+        }
+
+        .showColor {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>原生JS实现</h1>
+    <div>
+        <ul id="ulTab">
+            <li>tab1</li>
+            <li>tab2</li>
+            <li>tab3</li>
+        </ul>
+    </div>
+    <div>
+        <h3>展示内容区域</h3>
+        <content id="content">
+        </content>
+    </div>
+    <script>
+        console.log('开始');
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM加载完成');
+            // 元素获取
+            const ulTab = document.getElementById('ulTab');
+            const content = document.getElementById('content');
+            // Nodelist
+            const liDOM = ulTab.querySelectorAll('li');
+            // 操作
+            let preElement=null;
+            for (let i = 0; i < liDOM.length; i++) {
+                liDOM[i].addEventListener('click', () => {
+                    content.textContent = i;
+                    if(preElement){
+                        preElement.classList.remove('showColor');
+                    }
+                    liDOM[i].setAttribute('class', 'showColor');
+                    preElement = liDOM[i];
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

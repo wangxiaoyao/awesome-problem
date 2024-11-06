@@ -62,10 +62,6 @@
     <script type="text/javascript">
 
       $(function () {
-        // for (var i = 0, len = $('li').length; i < len; i++) {   $('li')[i].index = i;
-        //
-        //   $('li')[i].onclick = function () {     for (var n = 0; n < len; n++) {       $('li')[n].className = "";       $('.content > div')[n].className = "hide";     }     $(this).className = "on";     $('.content > div')[this.index].className = "show";
-        // } }
         for (var i = 0, len = $('li').length; i < len; i++) {
           $('li')[i].index = i;
           $('li')[i].onclick = function () {
@@ -80,7 +76,6 @@
             $('.content > div')[this.index].className = "show";
           }
         }
-
       })
     </script>
   </body>
