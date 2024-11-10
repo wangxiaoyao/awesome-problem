@@ -41,6 +41,7 @@ function  floatCalculate(num1,num2,sign) {
     console.log("非浮点运算");
   }
 }
+
 console.log(floatCalculate(a1,b1,'/'));
 
 
