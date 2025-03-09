@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES5",                           // 将 TypeScript 编译为哪个版本的 JavaScript
+      "module": "ESNext",                        // 使用 ESNext 模块系统
+      "strict": true,                            // 启用所有严格的类型检查选项
+      "esModuleInterop": true,                   // 允许与 CommonJS 模块的互操作
+      "skipLibCheck": true,                      // 跳过声明文件的类型检查
+      "forceConsistentCasingInFileNames": true   // 强制文件名一致
+    },
+    "include": ["src"],  // 编译的文件夹
+    "exclude": ["node_modules"] // 不编译的文件夹
+  }

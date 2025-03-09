@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn vercel</title>
+    <!-- Meta Description -->
+    <meta name="description" content="learn vercel">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .site-name {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Main Content Section -->
+    <div class="pt-20 flex justify-center items-center min-h-screen">
+        <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-4xl">
+
+            <!-- Generate Email Button -->
+            <div class="mb-6 text-center">
+                <button id="mainContent"
+                    class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition duration-300">
+                    hello!
+                </button>
+                <button id="generate-email"
+                    class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition duration-300">
+                    Generate New Email
+                </button>
+            </div>
+
+            <script>
+                const mainContentButton = document.getElementById('mainContent');
+                const generateButton = document.getElementById('generate-email');
+
+                mainContentButton.addEventListener('click', async () => {
+                    try {
+                        const response = await fetch('/api/hello');
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        const data = await response.json();
+                        console.log(data,'data');
+                        if (data.code === 200 && data.result) {
+                            alert('你好呀 ' + data.result);
+                        } else if (data.error) {
+                            throw new Error(data.error);
+                        } else {
+                            throw new Error('Unexpected response format');
+                        }
+                    } catch (error) {
+                        console.error('error');
+                        alert(`${error.message}`);
+                    }
+                });
+                // Generate new email
+                generateButton.addEventListener('click', async () => {
+                    try {
+                        const response = await fetch('/api/generate-email');
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        const data = await response.json();
+                        if (data.result && data.result.email) {
+                            alert('Generate Email successfullly', data.result.email);
+                        } else if (data.error) {
+                            throw new Error(data.error);
+                        } else {
+                            throw new Error('Unexpected response format');
+                        }
+                    } catch (error) {
+                        console.error('Error generating email:', error);
+                        alert(`${error.message}`);
+                    }
+                });
+
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "builds": [
+    {
+      "src": "client/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/client/$1"
+    }
+  ],
+  "cleanUrls": true
+}

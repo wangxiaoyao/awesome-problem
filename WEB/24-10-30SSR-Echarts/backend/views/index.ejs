@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>
+        <%= message %>
+    </h1>
+    <p>ssr:模版选择ejs</p>
+
+    <h1>echart.js 图片图表</h1>
+    <div id="echart">
+        <img src="<%= chartImage %>" alt="ECharts Image">
+    </div>
+
+    <h1>echart.js html+json图表</h1>
+    <div id="echartJson" style="width:800px;height:600px">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script>
+        const echartJsonOption = <%- JSON.stringify(echartJsonOption) %>;
+    </script>
+    <script src="/echartJsonClient.js"></script>
+
+
+
+</body>
+
+</html>

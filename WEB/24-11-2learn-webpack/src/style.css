@@ -1,0 +1,10 @@
+:root {
+    --main-color: coral;
+}
+/* body的配置 */
+body {
+    color: var(--main-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: all 0.3s;
+}
