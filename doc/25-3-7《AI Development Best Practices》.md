@@ -1,4 +1,24 @@
+# AI
 
+## 一 使用英文：
+
+Prompt:
+
+what is XXX / what dose XXX mean, give examples to help me understand it better
+
+
+
+What dose this error message mean and how do I fix it.
+
+
+
+Please explain this code ，how does this code work
+
+
+
+
+
+## 二 流程
 
 **chatgpt O1:**
 
