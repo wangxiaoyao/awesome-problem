@@ -1,11 +1,12 @@
 # mac-envConfiguration
-about how to configure the env of mac to develop more efficiently.
+
+> Frist turn off all electronic device information alerts ‼️ and follow your own rhythmic senses.
+
+about how to configure the env of mac to develop more efficiently. think more manipulating Applications in the CLI
 
 
 
-## 一 提升效率方案：纯键盘
-
-> 关闭所有电子设备信息提醒，按照自己的律动感
+## 一 提升效率
 
 
 
@@ -15,7 +16,8 @@ vim快捷键
 ## 跳转k行并编辑
 :k | o
 
-## 
+## 拷贝（使用鼠标后）
+y
 ```
 
 
@@ -60,7 +62,7 @@ softwareupdate --install -a
 
 
 
-### 2 homebrew
+### 2 homebrew（软件库）
 
 [官网安装](https://brew.sh/)
 
@@ -72,11 +74,35 @@ brew cleanup
 brew doctor
 ```
 
-2.1 设置定时拉取最新代码
+设置定时更新（插电的情况下）
+
+```apl
+## 设置mac:每天04:00 AM 唤醒
+sudo pmset repeat wake MTWRFSU 04:00:00
+
+## 插电，合上盖子可以睡眠（设置没啥用，因为插电状态依旧阻止了睡眠。）
+sudo pmset -c disablesleep 0
+## 插电（charging），不会睡眠
+sudo pmset -c sleep 0
+## 电池（battery），会睡眠（不然电池损耗很严重。）
+sudo pmset -b sleep 1
+
+## 保持网络防止vpn断开（all情况，优点鸡肋）
+sudo pmset -a networkoversleep 1
+
+## 编写脚本：其中设置 osascript 消息提醒，需要通过Script Editor间接打开Notifications中的消息提示。
+vim ~/.scripts/brew-update.sh
+
+## launchctl：设置自动运行脚本:每天4:05分进行更新。
+### 推荐目录
+vim ~/Library/LaunchAgents/com.user.brewupdate.plist
+### launchctl： load unload start stop
+launchctl load ~/Library/LaunchAgents/com.user.brewupdate.plist
+```
 
 
 
-###  3 Oh My Zsh
+###  3 Oh My Zsh（内核shell）
 
 [官网安装](https://ohmyz.sh/)
 
@@ -110,79 +136,46 @@ alias vimconfig="vim ~/.vimrc"
 
 
 
-### 4 Development Tools
+### 4 vim
 
-```bash
-## git
-brew install git
+lazyvim
 
-## node/npm
-brew install nvm
+```
+## 配置文件：.vimrc
+使用brew 安装vim 替代mac 自带（usr/bin）。关闭重启即可查看新版本。
+
+
+
+### 插件管理 vim-plug
+
+
+- copilot.vim  去掉
+- NERDTree 文件树
 ```
 
 
 
 ### 5 **Useful Utilities**:
 
+好好整理一下对应的工具
+
+
+
 ```bash
-brew install wget
+## 进程管理工具
+htop
 
-brew install htop
+## 目录跳转工具
+autojump
 
-## brew install fzf
-echo export 
-$(brew --prefix)/opt/fzf/install
-```
+## 版本控制
+git
 
-
-
-6 image
-
-```
- brew install webp
-```
+## github （github CLI）:github官网创建token进行配置。 gh auth login
+gh
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 基本构造
-
-mac 终端编程环境的搭建，以下一套工具构成一个完美的IDE。
-
-1 软件库 homebrew
-
-2 内核shell： zsh (oh-my-zsh)
-
-3 编辑器
-
-- vim：  负责代码编辑；
-
-5 C/CPP的编辑环境
+## C/CPP的编辑环境
 
 - ctags ： 负责代码解析生成tags；
 
@@ -192,197 +185,43 @@ mac 终端编程环境的搭建，以下一套工具构成一个完美的IDE。
 
 - cmake:  负责构建
 
-6 web端编译环境
+## web ENV
 
-- node（环境）
+- node
 
+- nvm
 
-
-## 编辑器vim
-
-使用brew 安装vim 替代mac 自带（usr/bin）。关闭重启即可查看新版本。
-
-### 1 新建配置文件.vimrc 
-
-```
-"显示行号
-set nu
-
-"启动时隐去援助提示
-set shortmess=atI
-
-"语法高亮
-syntax on
-
-"使用vim的键盘模式,避免vi的键盘模式
-set nocompatible
-
-"不需要备份文件
-set nobackup
-
-"没有保存或文件只读时弹出确认
-set confirm
-
-"鼠标可用
-set mouse=a
-
-"tab缩进
-set tabstop=4
-"自动缩进时,缩进长度为4
-set shiftwidth=4
-set expandtab
-set smarttab
-
-"c文件自动缩进
-set cindent
-
-"自动对齐
-set autoindent
-
-"智能缩进
-set smartindent
-
-"高亮查找匹配
-set hlsearch
-
-"显示匹配
-set showmatch
-
-"显示标尺，就是在右下角显示光标位置
-set ruler
-
-"不要闪烁
-set novisualbell
-
-"启动显示状态行
-set laststatus=2
-
-"浅色显示当前行
-autocmd InsertLeave * se nocul
-
-"用浅色高亮当前行
-autocmd InsertEnter * se cul
-
-"显示输入的命令
-set showcmd
-
-"被分割窗口之间显示空白
-set fillchars=vert:/
-set fillchars=stl:/
-set fillchars=stlnc:/
-
-"配色方案（将 XXX.vim的配色文件放在.vim/colors下）
-set background=dark
-"colorscheme solarized
-"colorscheme molokai
-"colorscheme gruvbox
-colorscheme one
-
-" 设置状态栏主题风格
-let g:Powerline_colorscheme='solarized256'
-syntax keyword cppSTLtype initializer_list
-
-"禁止折行
-set nowrap
-
-"基于缩进或语法进行代码折叠
-"set foldmethod=indent
-set foldmethod=syntax
-"启动 vim 时关闭折叠代码
-set nofoldenable
-
-"编码设置
-set encoding=utf-8
-
-"允许用退格键删除字符
-set backspace=indent,eol,start
-set backspace=2
-
-"共享剪切板
-set clipboard=unnamed
-
-"inoremap  就只在插入(insert)模式下生效
-"vnoremap 只在visual模式下生效
-"nnoremap/nmap 就在normal模式下(狂按esc后的模式)生效
-
-" 设置快捷键将选中文本块复制至系统剪贴板
-vnoremap <Leader>y "+y
-" 设置快捷键将系统剪贴板内容粘贴至 vim
-nmap <Leader>p "+p
-" 定义快捷键关闭当前分割窗口
-nmap <Leader>q :q<CR>
-" 定义快捷键保存当前窗口内容
-nmap <Leader>w :w<CR>
-" 定义快捷键保存所有窗口内容并退出 vim
-nmap <Leader>WQ :wa<CR>:q<CR>
-" 不做任何保存，直接退出 vim
-nmap <Leader>Q :qa!<CR>
-
-- " 定义快捷键到行首和行尾
-nmap LB 0
-nmap LE $
-" 跳转至右方的窗口 我看加w不方便
-nnoremap <Leader>l <C-W>l
-" 跳转至左方的窗口
-nnoremap <Leader>h <C-W>h
-" 跳转至上方的子窗口
-nnoremap <Leader>k <C-W>k
-" 跳转至下方的子窗口
-nnoremap <Leader>j <C-W>j
-" 定义快捷键在结对符之间跳转
-nmap <Leader>m %
-
-
-"插件管理
-call plug#begin('~/.vim/plugged')
-
-Plug 'preservim/nerdtree'
-Plug 'github/copilot.vim'
-
-call plug#end()
-```
-
-### 2 插件管理 vim-plug
-
-- copilot.vim 
-- NERDTree 文件树
-
-
-### 3 进制转化问题
-
-对于非文本文件的读写. 实现ultra
-
-```
-## 在vi命令状态下：
-
-## 转化为16进制格式
-:%!xxd        
-
-##  转回来
-:%!xxd -r   
-```
+## go ENV
 
 
 
-
-
-## 工具
-
-```
-## 视频转换
-ffmpeg
+## 目录结构可视化
+tree
 
 ## 下载
-wget
-yt-dlp
+- wget
+- yt-dlp
 
-## nvm
+## 远程连接工具
+telnet		
 
+
+## 模糊搜索工具
+fzf
+
+## CF
+## 测试 Cloudflare WARP 连接
+cloudflarewarpspeedtest
+
+## 用于 Warp+ 账户配置的工具	
+wgcf
+
+## 图片处理
+webp
+
+## 视频播放器(GUI 需要：brew install --cask iina)
+iina
+
+## 视频转换
+ffmpeg
 ```
-
-
-
-
-
-
-
