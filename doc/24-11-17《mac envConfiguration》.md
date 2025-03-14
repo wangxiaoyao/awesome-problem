@@ -8,16 +8,21 @@ about how to configure the env of mac to develop more efficiently. think more ma
 
 ## 一 提升效率
 
-
-
 vim快捷键
 
 ```bash
-## 跳转k行并编辑
-:k | o
+## 跳转行
+G : Go to Last Line
+nG:
+gg : Go to first Line
 
-## 拷贝（使用鼠标后）
-y
+## 复制yank 粘贴paste 剪切cut
+
+## 给多行添加注释：#
+可视块模式，移动光标选择所有行，必须大写I进入输入模式，输入字符， 记住按下esc才生效
+
+## 左移动/右移动tab
+V 进入可视行模式，然后按下 < 或者 >
 ```
 
 
