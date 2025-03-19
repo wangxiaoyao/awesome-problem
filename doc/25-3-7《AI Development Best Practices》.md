@@ -14,6 +14,12 @@ Hi, I want to learn XXX. please guide me as a XXX technologist. Please make a de
 
 
 
+#### thinking：
+
+1 AI 会受上下文的干扰。未必是最优解。可：重启新的窗口。
+
+
+
 ## 二 流程
 
 **chatgpt O1:**
