@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <button onclick="clickButton()">点击</button>
 
-    <script>
-      // 浏览器窗口拉伸
-      var COUNT = 1;
-      function testFn() {
-        console.log(COUNT++);
-      }
-      function throll(fn, delay) {
-        var timer = null;
-        return function () {
-          clearTimeout(timer);
-          timer = setTimeout(fn, delay);
-        };
-      }
-      window.onresize = throll(testFn, 1000);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      // 点击事件
-      function clickButtonFun() {
-        alert(1);
-      }
-      let clickButton = throll(clickButtonFun, 1000);
-    </script>
-  </body>
+<body>
+  <button onclick="clickButton()">点击</button>
+
+  <script>
+
+    // throll fun
+    function throll(fn, delay) {
+      var timer = null;
+      return function () {
+        clearTimeout(timer);
+        timer = setTimeout(fn, delay);
+      };
+    }
+
+    // 浏览器窗口拉伸
+    var COUNT = 1;
+    function testFn() {
+      console.log(COUNT++);
+    }
+    window.onresize = throll(testFn, 1000);
+
+    // 点击事件
+    function clickButtonFun() {
+      alert(1);
+    }
+    let clickButton = throll(clickButtonFun, 1000);
+  </script>
+</body>
+
 </html>

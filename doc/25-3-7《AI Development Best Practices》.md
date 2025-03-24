@@ -10,6 +10,8 @@ What dose this error message mean and how do I fix it.
 Please explain this code ，how does this code work
 
 Hi, I want to learn XXX. please guide me as a XXX technologist. Please make a detailed list of latest syllabus and optimum learning route. Expand on future trends, latest technologies, and usage scenarios and directions
+
+What variant of the classical problem am I running into and with what solution.
 ```
 
 
