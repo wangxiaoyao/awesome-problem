@@ -2,63 +2,29 @@
 
 > how AI like GPTs can be used  to  train our brains to learn subjects for more effectively 
 
-
-
 ```apl
-## 尽可能的使用英文!
-1 知识网络体系（mindMap）
+## 尽可能的使用英文! 
 
-- 关键节点: 20%核心知识自主推导80%内容
+// knowleage network
+Hi, I want to learn XXX. please guide me as a XXX technologist. deconstruct the skill for a goal.Please make a detailed list of latest syllabus, and build a knowledge mindMap.Expand on future trends, latest technologies, and usage scenarios and directions
 
-
-Hi, I want to learn XXX. please guide me as a XXX technologist. Please make a detailed list of latest syllabus, and build a knowledge mindMap.Expand on future trends, latest technologies, and usage scenarios and directions
-
-
-- 核心问题：“核心节点”（概念/作用， 节点联系，案例/练习）
-
-
-学习上述大纲内容，自我提炼出核心问题，或者AI生成：
+// flashCard
 “please，Make some spaced repetition flashcards for the XXX. Format as Q&A.”
-=》 记录进flashcards库（mindMap的笔记）
 
-
-- 可视化记忆（知识节点）
-
+// visual
 “Generate a flowchart/diagram for how a XXX works.”
+Please use XXX as your theme for the above learning. Create a personalized  Memory Palace (also known as the Method of Loci)
 
-
-
-2 实战经验（practice）
-
-
-- 解决问题：明确目标，想象力/创造力去解决实际问题，鼓励犯错然后纠正。
-
-
+// practise
 In response to the above learning.please, Generate step-by-step problem walkthroughs and Create mini-projects for hands-on learning.
+Correction:  What is Best practice?
 
-
-
-3 巩固（ review）
-
-
-- 费曼学习法 +  Socratic Method
-
+// review
 In order to test what I have learned above, carry out: Feynman Learning Method and Socratic Method (Prompting Critical Thinking).
 You will be asked to ask/question and I will answer as the teacher. A question and answer format.
 
 
-- Review flashcards 
-
-利用艾宾浩斯遗忘曲线每天复习flashcard
-
-
-```
-
-
-
-```apl
-// 其他“冒出来”的“知识”： 1 概念 2 关联 3 练习题
-
+## 其他“冒出来”的“知识”： 1 概念 2 关联 3 练习题
 // conception
 What is the concept of XXX, what dose XXX mean.Please give me some examples in layman's terms.
 

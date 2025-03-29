@@ -50,6 +50,9 @@ vscode：
 ```bash
 ## delete a line at any position
 cmd + shift + k
+
+## 编码中当前作用域相同变量名。选中一个后，会闪光，按下快捷键一次性改动。
+cmd+d
 ```
 
 chrome：
