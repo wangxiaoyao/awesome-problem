@@ -36,18 +36,25 @@ console.log(stringCountToObject(str));
  *  M1:Fisher-Yates Shuffle 
  */
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // swap
+    }
+    return array;
+}
 
 
 
 // Q:实现数组的排序。详细理解 V8 的 Timesort算法（小数组插入式排序）。下列执行顺序是什么？ 如何实现sort的从大到小的排序
 
-let arr = [5, 3, 8, 11, 7,1,0,67,89];
-// arr.sort((a, b) => {
-//     console.log(`Comparing ${a} to ${b}`);
-//     return a - b;
-// });
+let arr = [5, 3, 8, 11, 7, 1, 0, 67, 89];
+arr.sort((a, b) => {
+    console.log(`Comparing ${a} to ${b}`);
+    return a - b;
+});
 
-// 从小到大排序
+// 从小到大排序：常规
 // let imitationSort = (arr) => {
 //     for (let i = 0; i < arr.length; i++) {
 //         for (let k = i + 1; k < arr.length; k++) {
@@ -61,51 +68,31 @@ let arr = [5, 3, 8, 11, 7,1,0,67,89];
 //     }
 //     return arr;
 // }
-let imitationSort = (arr) => {
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (i === 0) {
-            newArr.push(arr[0]);
+
+// 二分法排序： 记住 newArr 是一个升序的数组。思考降序
+const binarySearchIndex = (newArr, target) => {
+    let left = 0;
+    let right = newArr.length;
+    let middlePostion;
+
+    while (left < right) {
+        middlePostion = Math.floor((left + right) / 2);
+        if (target > newArr[middlePostion]) {
+            left = middlePostion + 1;
         } else {
-
-            // 二分法
-            console.log(newArr);
-            let middlePosition = newArr.length % 2 === 0 ? newArr.length / 2 : (newArr.length - 1) / 2;
-            console.log(middlePosition);
-
-            if (arr[i] >= newArr[middlePosition]) {
-                let newArrlength = newArr.length;
-
-                for (let k = middlePosition; k <= newArrlength; k++) {
-                    if (arr[i] < newArr[k]) {
-                        newArr.splice(k, 0, arr[i]);
-                        break;
-                    }
-
-                    if (k === newArrlength) {
-                        newArr.splice(k + 1, 0, arr[i]);
-                    }
-                }
-
-            } else {
-                for (let k = middlePosition; k >= 0; k--) {
-                    if (arr[i] > newArr[k]) {
-                        newArr.splice(k + 1, 0, arr[i]);
-                        break;
-                    }
-                    if (k === 0) {
-                        newArr.splice(0, 0, arr[i]);
-                    }
-                }
-            }
+            right = middlePostion;
         }
+    }
+    return left;
+}
+
+const imitationSort = (arr) => {
+    let newArr = [];
+    for (let index = 0; index < arr.length; index++) {
+        let leftVal = binarySearchIndex(newArr, arr[index]);
+        newArr.splice(leftVal, 0, arr[index]);
     }
     return newArr;
 }
+
 console.log(imitationSort(arr));
-
-
-
-
-
-
