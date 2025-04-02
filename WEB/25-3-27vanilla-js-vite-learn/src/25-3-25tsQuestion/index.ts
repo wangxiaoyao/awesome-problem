@@ -1,8 +1,8 @@
-// typescript code question ：so complete “AllowNull”
+// Q1: typescript code question ：so complete “AllowNull”
 
-type A = number; 
-type B = string; 
-type C = {age: number; name: string}; 
+type A = number;
+type B = string;
+type C = { age: number; name: string };
 
 
 // type AllowNull ?

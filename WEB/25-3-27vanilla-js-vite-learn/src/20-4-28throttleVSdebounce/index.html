@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="appClick">
+        <button>点击</button>
+    </div>
+
+    <div id="appInput">
+        <input type="text">
+    </div>
+
+    <script>
+        const logicFun = () => {
+            console.log('执行逻辑函数');
+        }
+
+        /**
+        * 节流函数：skip if too soon! DOM操作不间断触发：重新调整浏览器窗口大小（resize），浏览器页面滚动（scroll），鼠标移动（mousemove）。卡死UI反应慢。所以添加延迟执行的逻辑， 
+        *  思路： 
+        *  1 监听点击事件。 执行handleClick 函数。 让throttle 包裹 逻辑函数 和时间间隔
+        *  2 第一次点击生成一个timer，然后timer 放在setTimeout 中 1S后自己销毁
+        *  3 第二次点击，如果这个timer存在，就不能执行“逻辑函数”，否则可以执行逻辑函数，并且重新生成一个新的timer，并在1S后销毁
+        */
+
+
+        const buttonDom = document.getElementById('appClick');
+
+        /**
+         * @param {number} delay - 节流的时间间隔（毫秒）
+         * @param {Function} callback - 要执行的逻辑函数
+         * @returns {Function} - 包装后的节流函数
+         */
+        function throttle(delay, callback) {
+            let timer = null;
+
+            return function (...args) {
+                if (timer) return;
+
+                callback.apply(this, args); // 保证 this 和参数正确传递
+
+                timer = setTimeout(() => {
+                    timer = null;
+                }, delay);
+            };
+        }
+
+
+
+        buttonDom.addEventListener('click', throttle(1000, logicFun))
+
+        /**
+         * debounce： 停止一段时间后可以运行 no action
+         * 我的思路： 当某个行为（输入）已经停止后的多少秒，我们在执行一个函数。
+         * leading： 是指第一次调用会立即执行。 trailing：最后一次调用会不会执行。
+         */
+
+        const inputDom = document.getElementById('appInput');
+
+        function debounce(delay, callback, { leading, trailing }) {
+            let timer = null;
+            let leadingCalled = false;
+
+            let lastArgs, lastThis;
+
+            return function (...arg) {
+
+                lastArgs = args;
+                lastThis = this;
+
+                const invokeLeading = leading && !timer;
+
+                if (timer) {
+                    clearTimeout(timer);
+                }
+
+                if (invokeLeading) {
+                    callback.apply(lastThis, lastArgs);
+                    leadingCalled = true;
+                }
+
+                timer = setTimeout(() => {
+                    if (trailing && (!leading || leadingCalled)) {
+                        callback.apply(lastThis, lastArgs);
+                    }
+
+                    lastArgs = null;
+                    lastThis = null;
+
+                    timer = null;
+                    leadingCalled = false;
+                }, delay)
+
+            }
+        }
+        inputDom.addEventListener('input', debounce(1000, logicFun, { leading: true, trailing: true }))
+
+
+    </script>
+</body>
+
+</html>

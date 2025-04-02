@@ -26,14 +26,17 @@ You will be asked to ask/question and I will answer as the teacher. A question a
 
 ## 其他“冒出来”的“知识”： 1 概念 2 关联 3 练习题
 // conception
-What is the concept of XXX, what dose XXX mean.Please give me some examples in layman's terms.
+What is the concept of XXX, what dose it mean.How it works.Please give me some examples in layman's terms.
 
-// connection
+// connection: 任何问题的根源问题：classical problem
 what “knowledge nodes” are associated with it?
 What variant of the classical problem am I running into and with what solution.
 
 // exercise
 How can I apply this in conjunction with the above concepts? please give me a few common practice questions to help me become more solid and effective in my knowledge.
+
+// thinking
+for this question please give me the right guidance, and hints for thinking. Never tell me the answer.
 
 
 What dose this error message mean and how do I fix it.
