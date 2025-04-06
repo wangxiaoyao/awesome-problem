@@ -60,7 +60,7 @@ const arrToTree = (list) => {
             //     parentNode.children = [];
             // }
             // parentNode.children.push(item);
-            (parentNode.children = parentNode.children || []).push(map.get(node.id));
+            (parentNode.children = parentNode.children || []).push(item);
 
         } else {
             root.push(node);

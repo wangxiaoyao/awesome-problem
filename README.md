@@ -111,6 +111,20 @@ export default function Page() {
 ```
 
 
+```shell
+TypeScript
+
+Tailwind CSS
+
+ESLint + Prettier
+
+Husky + Lint-staged (for git hook & code quality)
+
+React Testing Library + Vitest / Jest (for testing)
+
+```
+
+
 
 ## leetcode
 
