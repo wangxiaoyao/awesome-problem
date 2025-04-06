@@ -4,7 +4,7 @@
 
 ## 一 instruction
 
-1 命名规范：所有文件夹一律使用： kebab-case。 映射 URL 友好、主流风格一致，防止linux操作系统对大小写敏感而不稳定
+1 命名规范：所有文件夹名称一律使用： kebab-case。 映射 URL 友好、主流风格一致，防止linux操作系统对大小写敏感而不稳定。
 
 2 文件以 `创立时间 + 问题 `命名，每一个文件夹包含README文件：问题，思路。（多文件表示多种解题方式）
 
@@ -44,13 +44,71 @@ gcc XXX.c -o "可执行程序名称"
 
 ### WEB
 
-> 常见web开发问题
+> web开发问题：分 question 为：常见练习题；demo：开发小案例
+
+### 一 question
 
 
 
+### 二 demo
+
+Nextjs项目结构以及命名方式：（WEB项目结构命名）
+
+```shell
+my-next-app/											# 文件夹统一使用：kebab-case
+├── src/                       # Static assets (images, fonts)
+    ├── app/                          # Routing (app directory for App Router)
+    │   ├── layout.js
+    │   ├── page.js                   # Root page
+    │   └── dashboard/                # route即url。短：全部小写，长：kebab-case	egg：/user-settings
+    │       ├── layout.js
+    │       └── page.js               # 默认页面导出：Page命名。如下
+    │       └── components						# 文件夹
+    │           └── DashboardStatus.js # 组件命名：不论是组件文件夹名还是文件名都是：大驼峰（PascalCase）
+                                      # DashboardStatus （如果没有内嵌子组件，直接一个文件名）
+                                        /index.js
+                                        /DashboardStatus.module.css																										              						/Other.js 子组件
+    ├── components/                   # Reusable components
+    │   ├── ui/                       # UI-specific components (Button, Modal, Card...)
+    │   └── shared/                   # Shared components across features
+    ├── lib/                          # 系统模块或第三方集成封装，有副作用、非纯函数。工具库 / API 封装 / 第三方整合
+    │   ├── api.js                    # API calls or data fetching methods
+    │   └── parseToken.ts             # Miscellaneous utility functions => 使用小驼峰
+		└── utils/                				# 小而通用的“纯函数”，不依赖应用上下文，职责单一，可重复使用：lodash
+       └── formatDate.ts
+    ├── hooks/                        # Custom React hooks => use 开头，小驼峰
+    │   ├── useAuth.js
+    │   ├── useFetch.js
+    │   └── index.js                  # Export all hooks
+    ├── styles/                       # Global CSS, Tailwind configs, etc.
+    │   ├── globals.css
+    │   └── tailwind.css
+    ├── contexts/                     # React Context API providers => Context结尾，大驼峰
+    │   └── AuthContext.js
+    ├── types/                        # TS类型
+    │   └── index.ts
+    ├── constants/                    # 常量
+    │   └── index.ts
+├── public/                       # Static assets (images, fonts)
+├── middleware.js                 # Next.js middleware (optional)
+├── next.config.js                # Next.js configuration
+├── jsconfig.json or tsconfig.json # Path aliases configuration
+└── package.json
+└── .eslintrc.js              		# ESLint 配置
+```
 
 
 
+```shell
+## 路由页面统一使用：Page 命名。默认导出，或者 DashboardPage
+export default function Page() {
+    return (
+        <div>
+        		<组件 />
+        </div>
+    )
+}
+```
 
 
 
@@ -71,7 +129,7 @@ gcc XXX.c -o "可执行程序名称"
 
 
 
-## doc
+## blog
 
 > 日常博客内容
 
