@@ -61,11 +61,25 @@ class EventBus {
         if (!this.events[eventName]) this.events[eventName] = [];
         this.events[eventName].push(callback)
     }
-    publish(eventName, info) {
-        this.events[eventName].forEach(item => item(info))
+    unsubscribe(eventName, callback) {
+        if (!this.events[eventName]) return;
+
+        if (!callback) {
+            delete this.events[eventName]
+        } else {
+            this.events[eventName] = this.events[eventName].filter((item) => item !== callback);
+            if (this.events[eventName].length === 0) {
+                delete this.events[eventName];
+            }
+        }
+    }
+    // 支持多个参数 "...args"
+    publish(eventName, ...args) {
+        this.events[eventName].forEach(callback => callback(...args))
     }
 }
 
+// publisher don't know k1 k2
 const bus = new EventBus();
 
 // k1/k2 is subscriber to 'login'

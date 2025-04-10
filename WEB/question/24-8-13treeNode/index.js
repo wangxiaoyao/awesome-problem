@@ -66,8 +66,6 @@ const arrToTree = (list) => {
             root.push(node);
         }
     })
-
-
     return root;
 }
 const tree = arrToTree(list);

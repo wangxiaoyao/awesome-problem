@@ -56,9 +56,3 @@ console.log('Q1:', replicaConfigFun4([1, 2, 3], true));
 <A onClick5={(val) =>handleFun(val,param)} />
 
  */
-
-
-/**
- * 简单实现一个事件订阅机制，具有监听on 和 触发emit方法。class EventEmitter{ }
- */
-
