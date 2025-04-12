@@ -23,25 +23,28 @@ Finally, could you suggest some high-quality learning resources (e.g., online co
 
 二 education
 
-// 选取mindMap根节点
+// 1 选取mindMap根节点
 Now you are an education specialist. “XXX” as the theme content for teaching and explaining
 
-// 选取正确的问题（flashCard）=> 记录于mindmap 
+
+// 2 核心问题（flashCard）=> 记录于mindmap 
+
 // conception
 What is the concept of XXX, what dose it mean.How it works.Please give me some examples in layman's terms.
 
 
 // connection: 连接
-// 1 概念"联系"
+// 概念"联系"
 what "XXX" knowledge nodes are associated with it? parent node?Sub-Nodes?
-// 2 问题"联系"
+// 问题"联系"
 What variant of the classical problem am I running into and with what solution.
 
-// Common Pitfalls： 经典的错误事项，记录于github
+
+// Common Pitfalls： 经典的错误事项（记录于github）
 For this section：Typical mistakes or misconceptions to watch out for.
 
 
-=》 flashCard:(生成正确的问题)
+=》 flashCard:(核心问题)
 please，Make some spaced repetition flashcards for this section. Format as Q&A.
 
 
@@ -53,6 +56,7 @@ Please use XXX as your theme for the above learning. Create a personalized  Memo
 
 三 Practical Exercises：记录于github
 
+// 生成练习题
 In response to the above learning.please, Generate step-by-step problem walkthroughs and Create specific tasks or mini-projects for hands-on practice. Use non-downloadable Markdown format.
 
 For the learning stage focusing on [Specify the concept or topic just learned], I need practical exercises to solidify my understanding and develop proficiency. Please generate:
