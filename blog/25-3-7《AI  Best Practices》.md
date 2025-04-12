@@ -3,52 +3,89 @@
 > how AI like GPTs can be used  to  train our brains to learn subjects for more effectively 
 
 ```apl
-## 尽可能的使用英文! 
+## 使用英文! 
+一 mindMap
 
-// knowleage network
-Hi, I want to learn XXX. please guide me as a XXX technologist. deconstruct the skill for a goal.Please make a detailed list of latest syllabus, and build a knowledge mindMap.Expand on future trends, latest technologies, and usage scenarios and directions
+// knowleage mindMap （技术推荐： https://roadmap.sh/）
+Hi, I want to learn “XXX”.  Please guide me as an education specialist to effectively learn this skill. 
 
-// flashCard
-“please，Make some spaced repetition flashcards for the XXX. Format as Q&A.”
+Please deconstruct the skill to make a detailed list of latest "syllabus"/"roadmap", and build a knowledge mindMap.
 
-// visual
-“Generate a flowchart/diagram for how a XXX works.”
-Please use XXX as your theme for the above learning. Create a personalized  Memory Palace (also known as the Method of Loci)
-
-// practise
-In response to the above learning.please, Generate step-by-step problem walkthroughs and Create mini-projects for hands-on learning.
-Correction:  What is Best practice?
-
-// review
-In order to test what I have learned above, carry out: Feynman Learning Method and Socratic Method (Prompting Critical Thinking).
-You will be asked to ask/question and I will answer as the teacher. A question and answer format.
+Furthermore, please elaborate on:
+- Emerging trends and future directions in "the skill".
+- Relevant and latest technologies, tools, or platforms used in this field.
+thank U!
 
 
-## 其他“冒出来”的“知识”： 1 概念 2 关联 3 练习题
+// source
+Finally, could you suggest some high-quality learning resources (e.g., online courses, books, communities) that align with the prioritized core knowledge and the learning path you've outlined?"
+
+
+二 education
+
+// 选取mindMap根节点
+Now you are an education specialist. “XXX” as the theme content for teaching and explaining
+
+// 选取正确的问题（flashCard）=> 记录于mindmap 
 // conception
 What is the concept of XXX, what dose it mean.How it works.Please give me some examples in layman's terms.
 
-// connection: 任何问题的根源问题：classical problem
-what “knowledge nodes” are associated with it?
+
+// connection: 连接
+// 1 概念"联系"
+what "XXX" knowledge nodes are associated with it? parent node?Sub-Nodes?
+// 2 问题"联系"
 What variant of the classical problem am I running into and with what solution.
 
-// exercise
-How can I apply this in conjunction with the above concepts? please give me a few common practice questions to help me become more solid and effective in my knowledge.
+// Common Pitfalls： 经典的错误事项，记录于github
+For this section：Typical mistakes or misconceptions to watch out for.
+
+
+=》 flashCard:(生成正确的问题)
+please，Make some spaced repetition flashcards for this section. Format as Q&A.
+
+
+=》 visual
+“Generate a flowchart/diagram for how a XXX works.”
+
+Please use XXX as your theme for the above learning. Create a personalized  Memory Palace (also known as the Method of Loci)
+
+
+三 Practical Exercises：记录于github
+
+In response to the above learning.please, Generate step-by-step problem walkthroughs and Create specific tasks or mini-projects for hands-on practice. Use non-downloadable Markdown format.
+
+For the learning stage focusing on [Specify the concept or topic just learned], I need practical exercises to solidify my understanding and develop proficiency. Please generate:
+- A few practice questions that directly test my comprehension of the concepts.
+- At least one step-by-step problem walkthrough demonstrating how to apply the concepts to solve a typical problem.
+- One or more specific tasks or mini-projects that will allow me to apply the learned concepts in a more hands-on and integrated way.
+Please ensure these exercises are relevant to my goal and help me become more effective in my knowledge. If possible, suggest the expected outcome or key considerations for the tasks/mini-projects.
+
 
 // thinking
 for this question please give me the right guidance, and hints for thinking. Never tell me the answer.
 
 
+// Correction:  
+What is Best practice?
+
+
+
+四 review
+In order to test what I have learned above, carry out: Feynman Learning Method and Socratic Method (Prompting Critical Thinking).
+You will be asked to ask/question and I will answer as the teacher. A question and answer format.
+
+
+
+## 其他
 What dose this error message mean and how do I fix it.
 
 Please explain this code ，how does this code work.
-
 
 // key words
 simplified explanations
 analogies
 detailed deep dives
-
 ```
 
 
