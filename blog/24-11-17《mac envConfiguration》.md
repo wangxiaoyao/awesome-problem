@@ -6,11 +6,15 @@
 
 
 
-## 一 shortcut key
+## mac config
 
-mac
+```shell
+## 基本设置
+system setting
 
-```bash
+## 设置时区
+sudo systemsetup -settimezone Asia/Shanghai
+
 # 重置SMC:电池问题
 18年型号： ctrl（左侧） + option（左侧） + shift（右侧） ： 三个键7秒后 ， 额外加上开机键7秒
 
@@ -27,6 +31,10 @@ softwareupdate --install "Label"
 ## xcode + OS系统版本全部更新(慎用！)
 softwareupdate --install -a
 ```
+
+
+
+## 一 shortcut key
 
 vim
 
@@ -146,7 +154,7 @@ plugins=(git)
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 source $ZSH/oh-my-zsh.sh
 
-## brew install zsh-syntax-highlighting: $(brew --prefix) 为获取brew安装目录/usr/local
+## brew install zsh-syntax-highlighting   $(brew --prefix) 为获取brew安装目录/usr/local
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## brew install zsh-autosuggestions
@@ -246,14 +254,24 @@ gitleaks
 
 - cmake:  负责构建
 
-## 版本控制
-git
+## node（git）
+- nvm
+- npm audit/npm audit fix： 运行安全检查和修复
+
+### npm项目更新( 1 默认是更新到package中的最新版本. 2 npm registry最新： --target latest)
+npm outdated
+npx npm-check-updates -u
+npm install
+
+## 配置github ssh
 
 ## github （github CLI）
 - github官网创建token进行配置
 - gh auth login
 - 配置 Dependabot alerts
 gh
+
+
 
 ## docker 客户端包含Docker CLI、Docker Engine 和 Docker Compose
 brew install --cask docker
@@ -262,14 +280,6 @@ brew install --cask docker
 ## 处理json数据(格式化，查询，筛选，修改)
 jq
 
-## node
-- nvm
-- npm audit/npm audit fix： 运行安全检查和修复
-
-### npm项目更新( 1 默认是更新到package中的最新版本. 2 npm registry最新： --target latest)
-npm outdated
-npx npm-check-updates -u
-npm install
 
 ## go
 
@@ -281,3 +291,34 @@ npm install
 ## lua 语言的包管理器（nvim需要）
 luarocks
 ```
+
+
+
+AI
+
+```shell
+## 配置阿里云百炼 API环境变量 到 zsh 
+$DASHSCOPE_API_KEY
+
+```
+
+
+
+## 三 软件
+
+```shell
+微信
+
+VPN
+
+飞书
+
+chrome
+
+vscode
+
+cursor
+```
+
+
+
