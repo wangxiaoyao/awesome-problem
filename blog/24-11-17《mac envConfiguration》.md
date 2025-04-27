@@ -239,6 +239,21 @@ ffmpeg
 Dev
 
 ```bash
+## 配置github
+### ssh-keygen, passphrase
+ssh-keygen -t ed25519 -C "U-mail"
+
+
+
+
+
+## github （github CLI）
+- github官网创建token进行配置
+- gh auth login
+- 配置 Dependabot alerts
+gh
+
+
 ## 自动管理环境变量：目录级别
 direnv
 
@@ -262,15 +277,6 @@ gitleaks
 npm outdated
 npx npm-check-updates -u
 npm install
-
-## 配置github ssh
-
-## github （github CLI）
-- github官网创建token进行配置
-- gh auth login
-- 配置 Dependabot alerts
-gh
-
 
 
 ## docker 客户端包含Docker CLI、Docker Engine 和 Docker Compose

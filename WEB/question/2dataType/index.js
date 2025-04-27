@@ -97,7 +97,15 @@ console.log(checkData && checkData?.length);
 console.log((checkData && checkData?.length) !== 0);
 
 let obj = {
-    a:1,
-    b:2
-}
+  a: 1,
+  b: 2,
+};
 
+console.log("9<===========>");
+
+let k = {
+  a: 1,
+  b: 2,
+};
+let arr = [1, 2, 3];
+console.log(arr.find(0));

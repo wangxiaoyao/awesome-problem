@@ -104,17 +104,18 @@ detailed deep dives
 
 **chatgpt O1:**
 
-1 Readme.md 文档（英文版本）
+1 Readme.md：
 
-- 产品需求文档（PRD）
+- Can you please generate a product requirements document for me based on this information?（PRD）
 
-- 请你作为架构师，依据PRD，设计技术栈，设计算法，定义数据库结构，配色和UI设计。
+- Please act as a good architect to design a good technology stack, design algorithms, define database structure, and give colour scheme and UI design suggestions based on PRD documents.
 
-2 技术开发整体流程/步骤：
-
-请你作为架构师。帮助我选型技术栈，是否需要拓展？确保我软件开发生命周期（SDLC）中的各个环节Devops，如开发、测试、部署、监控和维护高效，自动化，安全。那么请你对我开启这个项目步骤进行指导吧。其中代码实现交给cursor，你专注于：项目的整体流程和步骤。必须考虑流程步骤的合理性和正确性。感谢！
+  Ensure that all aspects of my Software Development Life Cycle (SDLC) Devops such as development, testing, deployment, monitoring and maintenance are efficient, automated and secure.（Technical Design Document :TDD）
 
 
+2 开发整体流程/步骤：
+
+You are asked to open a step-by-step guide for the project based on the design of this technical document. Where the code implementation is left to cursor and you focus on: the overall process and steps of the project. The rationality and correctness of the process steps must be considered. Thanks to!
 
 **V0：**
 
