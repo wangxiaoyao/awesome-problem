@@ -45,6 +45,7 @@ nG:
 gg : Go to first Line
 
 ## 复制yank 粘贴paste 剪切cut
+全局
 
 ## 给多行添加注释：#
 可视块模式，移动光标选择所有行，必须大写I进入输入模式，输入字符， 记住按下esc才生效
@@ -75,6 +76,8 @@ cmd + shift + dele
 ## 二 configuration
 
 ### 1 homebrew（package manager）
+
+> 除了homebrew：还可以设置其他自动更新的soft： omz, nvm, npm -g 等非brew
 
 [官网安装](https://brew.sh/)
 
@@ -221,8 +224,11 @@ cloudflarewarpspeedtest
 ## 用于 Warp+ 账户配置的工具	
 wgcf
 
-## 图片压缩处理: magick XXX -quality 80 XXX
-imageMagick
+## iterm2 CLI查看图片
+imgcat xxx.png
+
+## 图片压缩处理: imageMagick
+magick XXX -quality 80 XXX
 
 ## 图片转换为webp
 cwebp
@@ -239,12 +245,20 @@ ffmpeg
 Dev
 
 ```bash
-## 配置github
-### ssh-keygen, passphrase
+## github
+### ssh-keygen, passphrase（使用private key,需要密码）：拷贝.pub 到github官网。创建两种type的ssh key。 for auth/signing
 ssh-keygen -t ed25519 -C "U-mail"
 
+### 启用ssh-agent 并记住ssh passphrase。 并入.zshrc。 验证 ssh-add -l
+eval '${ssh-agent -s}'
+ssh-add .ssh/私钥
 
-
+### signature： SSH/GPG for git commit/tag。 配置gitconfig。
+#### 使用ssh而不是GPG
+git config --global gpg.format ssh
+git config --global user.signingkey "$(cat ~/.ssh/id_ed25519.pub)"
+#### 自动签名不需要 -S
+git config --global commit.gpgsign true
 
 
 ## github （github CLI）
