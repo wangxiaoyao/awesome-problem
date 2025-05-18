@@ -267,7 +267,6 @@ git config --global commit.gpgsign true
 - 配置 Dependabot alerts
 gh
 
-
 ## 自动管理环境变量：目录级别
 direnv
 
@@ -285,12 +284,23 @@ gitleaks
 
 ## node（git）
 - nvm
-- npm audit/npm audit fix： 运行安全检查和修复
+### 查看版本安装过版本。=》 brew-update.sh脚本会自动拉最新node并删除major以外的node版本
+nvm list
+### 设置默认值
+nvm alias default node
 
+## npm
+- npm audit/npm audit fix： 运行安全检查和修复
 ### npm项目更新( 1 默认是更新到package中的最新版本. 2 npm registry最新： --target latest)
 npm outdated
 npx npm-check-updates -u
 npm install
+
+## yarn/pnpm
+### Corepack内置于node>16中。默认关闭。启用后：可依据项目中package.json =》 packageManager 字段管理yarn版本：项目隔绝
+corepack enable
+### 在全局启用一个默认版本（如果项目没有packageManager字段，可用全局）
+corepack prepare yarn@stable --activate
 
 
 ## docker 客户端包含Docker CLI、Docker Engine 和 Docker Compose
@@ -319,7 +329,6 @@ AI
 ```shell
 ## 配置阿里云百炼 API环境变量 到 zsh 
 $DASHSCOPE_API_KEY
-
 ```
 
 

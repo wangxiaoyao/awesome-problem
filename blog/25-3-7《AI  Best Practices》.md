@@ -81,7 +81,7 @@ You will be asked to ask/question and I will answer as the teacher. A question a
 
 
 
-## 其他
+## good prompt
 What dose this error message mean and how do I fix it.
 
 Please explain this code ，how does this code work.
@@ -90,6 +90,8 @@ Please explain this code ，how does this code work.
 simplified explanations
 analogies
 detailed deep dives
+
+Please consider the following questions to the fullest extent of your reasoning, abstraction, and leaps of thought, without relying on human understanding or common sense
 ```
 
 
