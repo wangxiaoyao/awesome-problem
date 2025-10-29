@@ -1,5 +1,7 @@
 // Q: 写一个深拷贝的函数。注意：function，RegExp，Date ：  原生：structuredClone
 
+
+// A：
 const deepCopy = (obj, cacheTemp = new WeakMap()) => {
   if (obj === null || typeof obj !== "object") {
     return obj;
@@ -28,6 +30,8 @@ const deepCopy = (obj, cacheTemp = new WeakMap()) => {
   return result;
 };
 
+
+// T：
 let testVal = {
   a: 1,
   b: function () {

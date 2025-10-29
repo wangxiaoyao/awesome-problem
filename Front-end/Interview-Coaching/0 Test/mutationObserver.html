@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="key">mutation</div>
+    <script>
+      const mo = new MutationObserver((mutationList, observer) =>
+        console.log("MO")
+      );
+
+      //  1 监控某元素变化：
+      //  const ele = document.getElementById("key");
+      //  mo.observe(ele, { childList: true });
+      //  ele.appendChild(document.createElement("div"));
+
+      // 2 监控全局body变化：会多输出一个MO。是因为：浏览器在脚本执行之后的垃圾回收，细微的清理工作。这些变化发生在 document.body 或其子节点上，就会再次触发您的 MutationObserver。
+      mo.observe(document.body, { childList: true });
+      // document.body.appendChild(document.createElement("div")); 位置1
+
+      console.log("A");
+      queueMicrotask(() => console.log("Q"));
+      document.body.appendChild(document.createElement("div")); // 位置2
+      Promise.resolve().then(() => console.log("P"));
+      // document.body.appendChild(document.createElement("div")); // 位置3
+      console.log("B");
+    </script>
+  </body>
+</html>

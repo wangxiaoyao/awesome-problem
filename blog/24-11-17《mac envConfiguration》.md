@@ -213,6 +213,8 @@ tree
 ## 下载:油管等视频
 yt-dlp
 
+aria2c
+
 # network
 ## 测速（Macos build-in）
 networkQuality
@@ -238,6 +240,9 @@ iina
 
 ## 视频转换
 ffmpeg
+
+## pdf处理
+qpdf
 ```
 
 
@@ -297,7 +302,7 @@ npx npm-check-updates -u
 npm install
 
 ## yarn/pnpm
-### Corepack内置于node>16中。默认关闭。启用后：可依据项目中package.json =》 packageManager 字段管理yarn版本：项目隔绝
+### Corepack内置于node>16中的包装管理器代理。默认关闭。启用后：可依据项目中package.json =》 packageManager 字段管理yarn版本：项目隔绝
 corepack enable
 ### 在全局启用一个默认版本（如果项目没有packageManager字段，可用全局）
 corepack prepare yarn@stable --activate
@@ -313,9 +318,26 @@ jq
 
 ## go
 
+
+
 ## python
-- pyenv: 版本管理器
-- pytest： 测试
+> uv python list --only-installed 查看不同版本。包含：mac自带，brew安装的，uv项目安装的。路径不同。
+
+### mac全局使用homebrew安装的python
+brew install python
+
+### 管理项目以及对应的python版本： brew install uv
+- uv
+#### 临时
+uv venv --python 3.11
+#### 永久（生成.python-version）
+uv python pin 3.11
+uv venv
+
+#### 进入环境
+source .venv/bin/activate
+
+
 
 
 ## lua 语言的包管理器（nvim需要）

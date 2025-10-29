@@ -17,60 +17,51 @@ Furthermore, please elaborate on:
 thank U!
 
 
-// source
-Finally, could you suggest some high-quality learning resources (e.g., online courses, books, communities) that align with the prioritized core knowledge and the learning path you've outlined?"
-
-
 二 education
 
 // 1 选取mindMap根节点
 Now you are an education specialist. “XXX” as the theme content for teaching and explaining
 
-
-// 2 核心问题（flashCard）=> 记录于mindmap 
-
-// conception
+// 2 关键节点：conception 概念
 What is the concept of XXX, what dose it mean.How it works.Please give me some examples in layman's terms.
 
-
-// connection: 连接
-// 概念"联系"
+// 3 关键节点：connection 连接
 what "XXX" knowledge nodes are associated with it? parent node?Sub-Nodes?
-// 问题"联系"
+
+// 4 核心问题：变化/Common Pitfalls
 What variant of the classical problem am I running into and with what solution.
-
-
-// Common Pitfalls： 经典的错误事项（记录于github）
 For this section：Typical mistakes or misconceptions to watch out for.
 
 
-=》 flashCard:(核心问题)
+=> flashCard:(核心问题)
 please，Make some spaced repetition flashcards for this section. Format as Q&A.
 
 
-=》 visual
+=> visual
 “Generate a flowchart/diagram for how a XXX works.”
 
 Please use XXX as your theme for the above learning. Create a personalized  Memory Palace (also known as the Method of Loci)
 
 
-三 Practical Exercises：记录于github
+=> source
+Finally, could you suggest some high-quality learning resources (e.g., online courses, books, communities) that align with the prioritized core knowledge and the learning path you've outlined?"
 
-// 生成练习题
-In response to the above learning.please, Generate step-by-step problem walkthroughs and Create specific tasks or mini-projects for hands-on practice. Use non-downloadable Markdown format.
 
-For the learning stage focusing on [Specify the concept or topic just learned], I need practical exercises to solidify my understanding and develop proficiency. Please generate:
+三 practice：记录于github
+
+// 练习题(递增难度练习)
+In response to the above learning.please, Generate step-by-step problem walkthroughs and Create specific tasks or mini-projects for hands-on practice to solidify my understanding and develop proficiency. Use non-downloadable Markdown format.please make sure: Chunk difficulty ≈ 85 % success rate。If possible, suggest the expected outcome or key considerations for the tasks/mini-projects.
+
 - A few practice questions that directly test my comprehension of the concepts.
 - At least one step-by-step problem walkthrough demonstrating how to apply the concepts to solve a typical problem.
 - One or more specific tasks or mini-projects that will allow me to apply the learned concepts in a more hands-on and integrated way.
-Please ensure these exercises are relevant to my goal and help me become more effective in my knowledge. If possible, suggest the expected outcome or key considerations for the tasks/mini-projects.
 
 
-// thinking
+// thinking 引导式思考
 for this question please give me the right guidance, and hints for thinking. Never tell me the answer.
 
 
-// Correction:  
+// Correction: 纠正
 What is Best practice?
 
 
@@ -82,16 +73,13 @@ You will be asked to ask/question and I will answer as the teacher. A question a
 
 
 ## good prompt
+
+// 尽可能的展开AI的能力
+Please consider the following questions to the fullest extent of your reasoning, abstraction, and leaps of thought, without relying on human understanding or common sense
+
 What dose this error message mean and how do I fix it.
 
 Please explain this code ，how does this code work.
-
-// key words
-simplified explanations
-analogies
-detailed deep dives
-
-Please consider the following questions to the fullest extent of your reasoning, abstraction, and leaps of thought, without relying on human understanding or common sense
 ```
 
 

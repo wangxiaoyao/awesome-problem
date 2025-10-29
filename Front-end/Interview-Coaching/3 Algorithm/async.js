@@ -1,5 +1,5 @@
 /**
- * Q1: 实现一个sleep函数，意思是1000毫秒后执行下一步。
+ * Q1: 实现一个sleep函数，1000毫秒后执行下一步。
  */
 
 function sleepCallback() {

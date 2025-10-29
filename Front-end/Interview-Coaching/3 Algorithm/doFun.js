@@ -31,6 +31,7 @@ const replicaConfigFun3 = (data, code) => {
   return 1;
 };
 
+// 打印一个没有任何输出的值为 undefined
 const replicaConfigFun4 = (data, code) => {
   if (code) {
     let result = '';
@@ -39,7 +40,11 @@ const replicaConfigFun4 = (data, code) => {
     });
   }
 };
+
 console.log('Q1:', replicaConfigFun4([1, 2, 3], true));
+
+
+
 
 
 

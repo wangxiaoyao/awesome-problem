@@ -18,9 +18,9 @@ console.log(x.value);
 // === 引用比较
 let x1 = { a: 1 };
 let x2 = { a: 1 };
-console.log(x1 === x2);
+console.log(x1 === x2); // false
 let x3 = x1;
-console.log(x1 === x3);
+console.log(x1 === x3); // true
 
 // 2 type casting / type coercion
 console.log("2<===========>");

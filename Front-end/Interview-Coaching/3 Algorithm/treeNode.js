@@ -1,4 +1,5 @@
-// Q1：实现一个函数，平铺List转Tree结构，子节点parent字段对应父节点id
+// Q1：
+// 实现一个函数，平铺List转Tree结构，子节点parent字段对应父节点id
 
 //     ```js
 // ## 输入
@@ -46,6 +47,8 @@ const list = [
 ]
 
 const arrToTree = (list) => {
+    // 检查list 是不是数组
+    
     let root = [];
     let map = new Map();
     list.forEach(item => {
@@ -56,10 +59,6 @@ const arrToTree = (list) => {
         const node = map.get(item.id);
         if (item.parent && map.has(item.parent)) {
             const parentNode = map.get(item.parent);
-            // if (!parentNode.children) {
-            //     parentNode.children = [];
-            // }
-            // parentNode.children.push(item);
             (parentNode.children = parentNode.children || []).push(item);
 
         } else {
@@ -70,4 +69,28 @@ const arrToTree = (list) => {
 }
 const tree = arrToTree(list);
 
+console.log(JSON.stringify(tree, null, 2));
+
+
+
+
+function getTree(list) {
+    const map = {};
+    const result = [];
+    list.forEach((item) => {
+        map[item.id] = {...item, children: []}
+    });
+    list.forEach((item) => {
+        if (item.parent) {
+            if (map[item.parent]) {
+                map[item.parent].children.push(map[item.id]);
+            }
+        } else {
+            result.push(map[item.id])
+        }
+    })
+    return result
+}
+
+const tree1 = getTree(list);
 console.log(JSON.stringify(tree, null, 2));
