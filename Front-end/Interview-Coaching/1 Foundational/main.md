@@ -69,7 +69,7 @@ TTFB（Time to First Byte）：浏览器发出请求 → 收到响应的第一�
 
 FCP（First Contentful Paint）：首次把非空白内容（文字/图/非空 SVG/Canvas）画到屏幕的时间。
 	- 消除资源阻塞： 
-	   css：css提及压缩，css拆分为：关键css（Critical CSS）和 非关键css。 关键css内联在 <style> 标签中，非关键css：使用外部请求<link rel="stylesheet" href="non-critical-styles.css">
+	   css：css压缩，css拆分为：关键css（Critical CSS）和 非关键css。 关键css内联在 <style> 标签中，非关键css：使用外部请求<link rel="stylesheet" href="non-critical-styles.css">
 	   js：对于不依赖DOM的脚本：使用async 或者 defer （三者区别）
 	- 资源预加载： preload <link rel="preload" href="/font.woff2" as="font" crossorigin>
 	- 优化资源：图片优化（webp，可视区域懒加载Intersection Observer API），
@@ -91,14 +91,14 @@ CLS（Cumulative Layout Shift）：加载与渲染过程中可见内容元素意
 3 交互阶段
 
 TTI（Time to Interactive）：衡量了页面从开始加载到用户可以可靠地与页面元素进行交互所需的时间。（1 FCP结束 2 事件处理程序注册 3 主线程5s内没有长任务）
-	- 优化JS：Code Splitting按需加载 / Tree-Shaking移除未使用
+	- JS：Code Splitting 按需加载 / Tree-Shaking移除未使用
 	- 分解长任务 (Break Up Long Tasks)： >50ms 的JS运行视为长任务。setTimeout/ queueMicrotask / requestIdleCallback 进行异步任务的分解。
 	- Web Workers：将计算密集型任务移出主线程。使用Web Workers的独立线程
 
 
 INP（Interaction to Next Paint）：真实用户交互（点击/输入/拖拽）到下一帧渲染完成的时间。 考察响应用户的操作的反应时间。 解决主线程阻塞问题。
-	- 分解长任务：同上
 	- 防抖和节流
+	- 分解长任务：同上
 	- Web Workers：同上
 ```
 
@@ -125,6 +125,7 @@ var：函数作用域(函数内的var 声明只在该函数内可见) 或 全局
 let / const：块级作用域（block scope）。
 	- 任何一对花括号 { ... }（如 if、for、while、裸块、try/catch）内声明的变量，只在该块内有效；
 	- 不会挂到 window（即使在全局脚本里）。
+	- 不会重复声明
 
 
 例子：
